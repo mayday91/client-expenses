@@ -6,7 +6,7 @@ import { updateNote } from '../../api/notes'
 
 const EditNoteModal = (props) => {
     const { 
-        user, review, show, handleClose, msgAlert, triggerRefresh
+        user, expense, show, handleClose, msgAlert, triggerRefresh
     } = props
 
     const [note, setNote] = useState(props.note)
@@ -32,7 +32,7 @@ const EditNoteModal = (props) => {
         // e equals the event
         e.preventDefault()
 
-        updateNote(user, review._id, note)
+        updateNote(user, expense._id, note)
             // if we're successful in the modal, we want the modal to close
             .then(() => handleClose())
             // send a success message to the user

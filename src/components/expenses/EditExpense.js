@@ -27,25 +27,25 @@ const EditExpenseModal = (props) => {
   
   const handleSubmit = (e) => {
     e.preventDefault()
-
+    console.log('expense in edit', expense)
     updateExpense(user, expense)
     // if we're successful in modal we want modal to close
-    .then(() => handleClose())
-    .then(() => {
-      msgAlert({
-        heading: 'Oh Yeah!',
-        message: updateReviewSuccess,
-        variant: 'success'
-      })
-    })
-    .then(() => triggerRefresh())
-      .catch(() => 
+      .then(() => handleClose())
+      .then(() => {
         msgAlert({
-          heading: 'Oh No!',
-          message: updateReviewFailure,
-          variant: 'danger'
+          heading: 'Oh Yeah!',
+          message: updateReviewSuccess,
+          variant: 'success'
         })
-      )
+      })
+      .then(() => triggerRefresh())
+        .catch(() => 
+          msgAlert({
+            heading: 'Oh No!',
+            message: updateReviewFailure,
+            variant: 'danger'
+          })
+        )
   }
 
   return (

@@ -69,7 +69,8 @@ const ShowExpense = (props) => {
                 })
             })
             .then(() => {navigate('/')})
-            .catch(err => {                   
+            .catch(err => {     
+              console.log(err)              
                 msgAlert({
                     heading: 'Error removing expense',
                     message: messages.removeReviewFailure,
@@ -102,10 +103,10 @@ const ShowExpense = (props) => {
         <div>
             <Container style={cardContainerLayout}>
                 <Card style={expenseCard}>
-                    <Card.Header>{ expense.title }<br></br>{ expense.amount }</Card.Header>
+                    <Card.Header>Expense: { expense.title }<br></br>Amount: ${ expense.amount }</Card.Header>
                     <Card.Body>
                         <Card.Text>
-                            <div><small>{ expense.category }</small><br></br>Tracked by: { expense.userName }</div>
+                            <div><small>Category: { expense.category }</small><br></br>Tracked by: { expense.userName }</div>
                         </Card.Text>
                     </Card.Body>
                     <Card.Footer>

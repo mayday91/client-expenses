@@ -44,7 +44,7 @@ const CreateExpense = (props) => {
   // add handleSubmit here that makes API request and handles the response
   const handleSubmit = (e) => {
     e.preventDefault()
-
+    
     createExpense(user, expense)
     // if we're successful, navigate to show page for new pet
     // send success message to user

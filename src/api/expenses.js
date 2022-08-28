@@ -13,6 +13,8 @@ export const getOneExpense = (id) => {
 
 // CREATE
 export const createExpense = (user, newExpense) => {
+	console.log('user in create',user)
+    console.log('expense in create', newExpense)
 	return axios({
 		url: apiUrl + '/expenses',
 		method: 'POST',
@@ -28,7 +30,7 @@ export const createExpense = (user, newExpense) => {
 // UPDATE
 export const updateExpense = (user, updatedExpense) => {
 	return axios({
-		url: `${apiUrl}/expenses/${updatedExpense.id}`,
+		url: `${apiUrl}/expenses/${updatedExpense._id}`,
 		method: 'PATCH',
 		headers: {
 			Authorization: `Token token=${user.token}`,

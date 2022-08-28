@@ -10,7 +10,7 @@ const ShowNote = (props) => {
 
     // calls this to destroy a note
     const destroyNote = () => {
-        deleteNote(user, expense._id, note._id)
+        deleteNote(user, expense.id, note.id)
             .then(() => 
                 msgAlert({
                     heading: 'Note Deleted',
