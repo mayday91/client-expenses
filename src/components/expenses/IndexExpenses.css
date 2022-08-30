@@ -1,0 +1,10 @@
+.index {
+  justify-content: center;
+  text-align: center;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+}

@@ -4,23 +4,28 @@ import { Link } from 'react-router-dom'
 import LoadingScreen from '../shared/LoadingScreen'
 import { getAllExpenses } from '../../api/expenses'
 import { messages } from '../shared/AutoDismissAlert/messages'
+import './IndexExpenses.css'
 
 //style for our card container
 const cardContainerStyle = {
   display: 'flex',
   flexFlow: 'row wrap',
   justifyContent: 'center',
-  padding: '10px'
+  padding: '10px',
+  flex: 0.6,
 }
 
 const expenseCard = {
+  // flex: 0.6,
   textAlign: "center",
-  backgroundColor: "darkblue",
-  color:'grey',
-  width: '30%', 
+  backgroundColor: "rgba(155, 8, 194, 0.6)",
+  color:'black',
+  width: '300px', 
   margin: '10px',
-  border: '20px solid skyBlue',
-  borderRadius: '200px',
+  border: '5px solid rgba(155, 8, 194, 0.6)',
+  borderRadius: '20px',
+  textDecoration: 'none',
+  linkColor: 'white'
 }
 
 const IndexExpenses = (props) => {
@@ -28,36 +33,37 @@ const IndexExpenses = (props) => {
   const [error, setError] = useState(false)
   const { msgAlert } = props
   
-useEffect(() => {
-  getAllExpenses()
-  .then(res => setExpenses(res.data.expenses))
-  .catch(err => {msgAlert ({
-    heading: 'error getting reviews',
-    message: messages.getReviewsFailure,
-    variant: 'danger',
+  useEffect(() => {
+    getAllExpenses()
+    .then(res => setExpenses(res.data.expenses))
+    .catch(err => {msgAlert ({
+      heading: 'error getting expenses',
+      message: messages.getExpensesFailure,
+      variant: 'danger',
+      })
+    setError(true)
     })
-  setError(true)
-  })
-}, [msgAlert])
+  }, [msgAlert])
 
 
   if (error) {
     return <p>Error!</p>
   }
 
-  // if reviews havent been loaded yet, show loading message
+  // if Expenses havent been loaded yet, show loading message
   if (!expenses) {
     return <LoadingScreen />
   } else if (expenses.length === 0) {
     return <p>No expenses yet.</p>
   }
 
-  const expenseCards = expenses.map(expense => (
+   const expenseCards = expenses.map(expense => (
       <Card style={expenseCard} key={ expense.id }>
-        <Card.Header>{expense.title}</Card.Header>
+        <Card.Header><a href={`/expenses/${expense._id}`}>{expense.title}</a></Card.Header>
         <Card.Body>
           <Card.Text>
-            <Link to={`/expenses/${expense._id}`}>Read it!</Link><br></br>
+            ${expense.amount}
+            
           </Card.Text>
         </Card.Body>
       </Card>
