@@ -1,9 +1,12 @@
 .pie-chart {
   justify-content: center;
+  text-align: center;
   align-items: center;
   flex: 0.4;
-  height: 100vh;
+  height: 380px;
   /* width: 200px; */
+  margin: 10px;
+  padding: 10px;
 }
 
 .pie-chart-title {

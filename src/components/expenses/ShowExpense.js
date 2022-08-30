@@ -45,7 +45,7 @@ const ShowExpense = (props) => {
     // we can call that function to redirect the user wherever we want to
 
     const { user, msgAlert } = props
-    console.log('user in props', user)
+    console.log('user in props of showExpense', user)
     console.log('the expense in showExpense', expense)
     // destructuring to get the id value from our route parameters
 

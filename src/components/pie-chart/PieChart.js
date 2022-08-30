@@ -111,7 +111,7 @@ import React, { useEffect, useState } from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut, Pie } from 'react-chartjs-2';
 import './PieChart.css'
-import { getAllExpenses } from '../../api/expenses'
+// import { getAllExpenses } from '../../api/expenses'
 import { messages } from '../shared/AutoDismissAlert/messages'
 import IndexExpenses from '../expenses/IndexExpenses';
 import apiUrl from '../../apiConfig'
@@ -183,9 +183,6 @@ const MyPieChart = (props) => {
     
       <div className="pie-chart">
         <h1 className='pie-chart-title'>Your Spending Habits</h1>
-        <div className='links'>
-          
-        </div>
         <Doughnut data={data} {...props}/>
       </div>
       

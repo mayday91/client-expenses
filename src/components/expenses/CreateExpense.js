@@ -21,7 +21,7 @@ const CreateExpense = (props) => {
   const handleChange = (e) => {
     setExpense(prevExpense => {
       let updatedValue = e.target.value
-      // let updatedTitle = e.target.title
+      let updatedTitle = e.target.title
       const updatedName = e.target.name
 
       console.log('this is the input type', e.target.type)
@@ -33,7 +33,7 @@ const CreateExpense = (props) => {
       
       const updatedExpense = {
         [updatedName]: updatedValue,
-        // [updatedTitle]: updatedValue
+        [updatedTitle]: updatedValue
       }
       return {
         ...prevExpense,
