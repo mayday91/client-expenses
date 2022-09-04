@@ -145,8 +145,8 @@ const MyPieChart = (props) => {
   // set new state variables
   // set to array of numbers
 
-  const data1 = expenses[0].amount
-  const data2 = expenses[1].amount
+  // const data1 = expenses[0].amount
+  // const data2 = expenses[1].amount
 
   const data = {
     labels: ['Bills','Groceries', 'Entertainment', 'Clothes', 'Shoes'],
