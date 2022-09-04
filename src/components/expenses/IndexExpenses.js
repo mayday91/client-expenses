@@ -69,9 +69,13 @@ const IndexExpenses = (props) => {
       </Card>
     ))
   return (
+    
       <div style={ cardContainerStyle }>
+        <br></br>
+        <h1 className='yourExpenses'>Your Expenses</h1>
         { expenseCards }
       </div>
+     
     )
 }
 

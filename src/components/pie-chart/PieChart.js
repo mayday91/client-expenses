@@ -145,7 +145,8 @@ const MyPieChart = (props) => {
   // set new state variables
   // set to array of numbers
 
-
+  const data1 = expenses[0].amount
+  const data2 = expenses[1].amount
 
   const data = {
     labels: ['Bills','Groceries', 'Entertainment', 'Clothes', 'Shoes'],
@@ -163,8 +164,8 @@ const MyPieChart = (props) => {
         ],
         borderColor: [
           'rgba(35, 192, 192, 1)',
-          'rgba(175, 92, 92, 1)',
-          'rgba(275, 292, 192, 1)',
+          'rgba(194, 8, 137, 1)',
+          'rgba(176, 73, 237, 1)',
           'rgba(75, 192, 192, 1)',
           'rgba(35, 192, 192, 1)',
           'rgba(153, 102, 255, 1)',
