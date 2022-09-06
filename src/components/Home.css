@@ -1,0 +1,4 @@
+.homeItems {
+  display: flex;
+  flex-direction: row;
+}

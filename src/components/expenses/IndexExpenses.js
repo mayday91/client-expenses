@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import LoadingScreen from '../shared/LoadingScreen'
 import { getAllExpenses } from '../../api/expenses'
 import { messages } from '../shared/AutoDismissAlert/messages'
+import './IndexExpenses.css'
 
 //style for our card container
 const cardContainerStyle = {

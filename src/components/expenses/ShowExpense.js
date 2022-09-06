@@ -12,7 +12,7 @@ import messages from '../shared/AutoDismissAlert/messages'
 import EditExpenseModal from './EditExpense'
 import NewNoteModal from '../notes/NewNote'
 import ShowNote from '../notes/ShowNote'
-
+import './ShowExpense.css'
 
 const cardContainerLayout = {
     display: 'flex',
@@ -119,7 +119,7 @@ const ShowExpense = (props) => {
                             // expense.owner && user && expense.owner._id === user.id 
                             user && user.email === expense.userName
                             ?
-                            <>
+                            <div className="buttons">
                                 <Button onClick={() => setEditModalShow(true)} 
                                     className="m-2" 
                                     variant="warning"
@@ -133,7 +133,7 @@ const ShowExpense = (props) => {
                                 >
                                     Delete Expense
                                 </Button>
-                            </>
+                            </div>
                             :
                             null
                         }

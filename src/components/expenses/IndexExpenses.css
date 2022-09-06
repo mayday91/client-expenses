@@ -1,0 +1,17 @@
+.index {
+  justify-content: center;
+  text-align: center;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+}
+
+.yourExpenses {
+  padding: 10px;
+  margin: 10px;
+  /* margin-top: 10px; */
+  text-align: center;
+}
