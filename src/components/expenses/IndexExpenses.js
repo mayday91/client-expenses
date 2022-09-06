@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import Card from 'react-bootstrap/card'
 import { Link } from 'react-router-dom'
 import LoadingScreen from '../shared/LoadingScreen'
 import { getAllExpenses } from '../../api/expenses'
