@@ -9,6 +9,7 @@ As a user I want to:
 - Edit an expense after creating it
 - Delete an expense
 - View expenses split up in a pie chart
+<<<<<<< HEAD
 
 ## TECH USED
 - Axios
@@ -27,7 +28,7 @@ As a user I want to:
 | PATCH  | `/change-password/`    | `users#changepw`  |
 | DELETE | `/sign-out/`           | `users#signout`   |
 
-## PLAYLIST ROUTES
+## EXPENSE ROUTES
 
 | Verb    | URI Pattern           | Controller#Action      |
 |---------|-----------------------|------------------------|
@@ -45,3 +46,4 @@ As a user I want to:
 ![CHANGE PASSWORD](wireframes/changepw.jpg)
 ![EXPENSE SHOW PAGE](wireframes/showpage.jpeg)
 ![CREATE EXPENSE PAGE](wireframes/createexpense.jpg)
+=======

@@ -6,13 +6,13 @@ const messages = {
 	signOutSuccess: 'Come back soon!',
 	changePasswordSuccess: 'Password changed successfully!',
 	changePasswordFailure:'Failed to change passwords. Check your old password and try again.',
-	getReviewsFailure:'Error fetching reviews',
-	createReviewSuccess:'Review Created Successfully!',
-	createReviewFailure:'Something went wrong! Please try again.',
-	updateReviewSuccess:'Review updated successfully!',
-	updateReviewFailure:'Something went wrong! THIS SHIT SUCKS Please try again!',
-	removeReviewSuccess:'Review deleted!',
-	removeReviewFailure:'Could not delete Review! Please try again!'
+	getExpensesFailure:'Error fetching Expenses',
+	createExpenseSuccess:'Expense Created Successfully!',
+	createExpenseFailure:'Something went wrong! Please try again.',
+	updateExpenseSuccess:'Expense updated successfully!',
+	updateExpenseFailure:'Something went wrong! THIS SHIT SUCKS Please try again!',
+	removeExpenseSuccess:'Expense deleted!',
+	removeExpenseFailure:'Could not delete Expense! Please try again!',
 }
 
 module.exports = messages

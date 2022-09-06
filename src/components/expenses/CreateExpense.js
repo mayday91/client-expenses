@@ -2,7 +2,7 @@ import ExpenseForm from "./ExpenseForm";
 import { createExpense } from "../../api/expenses"
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { createReviewSuccess, createReviewFailure } from  '../shared/AutoDismissAlert/messages'
+import { createExpenseSuccess, createExpenseFailure } from  '../shared/AutoDismissAlert/messages'
 
 const CreateExpense = (props) => {
   console.log('these are the props in Create Expense', props)
@@ -21,7 +21,7 @@ const CreateExpense = (props) => {
   const handleChange = (e) => {
     setExpense(prevExpense => {
       let updatedValue = e.target.value
-      // let updatedTitle = e.target.title
+      let updatedTitle = e.target.title
       const updatedName = e.target.name
 
       console.log('this is the input type', e.target.type)
@@ -33,7 +33,7 @@ const CreateExpense = (props) => {
       
       const updatedExpense = {
         [updatedName]: updatedValue,
-        // [updatedTitle]: updatedValue
+        [updatedTitle]: updatedValue
       }
       return {
         ...prevExpense,
@@ -52,7 +52,7 @@ const CreateExpense = (props) => {
       .then(() => {
         msgAlert({
           heading: 'Oh Yeah!',
-          message: createReviewSuccess,
+          message: createExpenseSuccess,
           variant: 'success'
         })
       })
@@ -60,7 +60,7 @@ const CreateExpense = (props) => {
       .catch(() => 
         msgAlert({
           heading: 'Oh No!',
-          message: createReviewFailure,
+          message: createExpenseFailure,
           variant: 'danger'
         })
       )

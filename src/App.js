@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom'
 import { v4 as uuid } from 'uuid'
 import ShowExpense from './components/expenses/ShowExpense'
 import CreateExpense from './components/expenses/CreateExpense'
+import HomeIcon from '@material-ui/icons/Home';
 
 // import AuthenticatedRoute from './components/shared/AuthenticatedRoute'
 import AutoDismissAlert from './components/shared/AutoDismissAlert/AutoDismissAlert'
@@ -14,6 +15,7 @@ import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
+import IndexExpenses from './components/expenses/IndexExpenses'
 
 const App = () => {
 
@@ -44,47 +46,66 @@ const App = () => {
 
 		return (
 			<Fragment>
+
 				<Header user={user} />
+
 				<Routes>
-					<Route path='/' element={<Home msgAlert={msgAlert} user={user} />} />
+					<Route 
+						path='/' 
+						element={
+						<RequireAuth>
+						<Home msgAlert={msgAlert} user={user} Icon={HomeIcon}/>
+						</RequireAuth>
+						} 
+					/>
 					<Route
 						path='/sign-up'
-						element={<SignUp msgAlert={msgAlert} setUser={setUser} />}
+						element={<SignUp msgAlert={msgAlert} setUser={setUser} />
+						}
 					/>
 					<Route
 						path='/sign-in'
-						element={<SignIn msgAlert={msgAlert} setUser={setUser} />}
+						element={<SignIn msgAlert={msgAlert} setUser={setUser} />
+						}
 					/>
           <Route
             path='/sign-out'
             element={
-              <RequireAuth user={user}>
-                <SignOut msgAlert={msgAlert} clearUser={clearUser} user={user} />
-              </RequireAuth>
+            <RequireAuth user={user}>
+            <SignOut msgAlert={msgAlert} clearUser={clearUser} user={user} />
+          	</RequireAuth>
             }
           />
           <Route
             path='/change-password'
             element={
-              <RequireAuth user={user}>
-                <ChangePassword msgAlert={msgAlert} user={user} />
-              </RequireAuth>}
+            <RequireAuth user={user}>
+            <ChangePassword msgAlert={msgAlert} user={user} />
+            </RequireAuth>
+						}
           />
 					<Route 
-					path='/expenses/:id'
-					element={ 
-					<ShowExpense user={ user } msgAlert={ msgAlert }/> 
-					}
-				/>
+						path='/expenses/:id'
+						element={ 
+						<ShowExpense user={ user } msgAlert={ msgAlert }/> 
+						}
+					/>
+					<Route 
+						path='/expenses'
+						element={ 
+						<IndexExpenses user={ user } msgAlert={ msgAlert }/> 
+						}
+					/>
 					<Route
-					path='/addExpense'
-					element={ 
+						path='/addExpense'
+						element={ 
 						<RequireAuth user={user}>
-							<CreateExpense msgAlert={ msgAlert } user={user} />
+						<CreateExpense msgAlert={ msgAlert } user={user} />
 						</RequireAuth>
-					}
-				/>
+						}
+					/>
 				</Routes>
+
 				{msgAlerts.map((msgAlert) => (
 					<AutoDismissAlert
 						key={msgAlert.id}
@@ -95,6 +116,7 @@ const App = () => {
 						deleteAlert={deleteAlert}
 					/>
 				))}
+
 			</Fragment>
 		)
 }
