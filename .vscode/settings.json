@@ -1,2 +1,10 @@
 {
+<<<<<<< HEAD
+=======
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#460F40",
+    "titleBar.activeBackground": "#62155A",
+    "titleBar.activeForeground": "#FEFBFE"
+  }
+>>>>>>> finished
 }
