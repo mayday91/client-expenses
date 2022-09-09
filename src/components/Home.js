@@ -4,11 +4,11 @@ import './Home.css'
 
 const Home = (props) => {
 	const { msgAlert, user } = props
-	console.log('props in home', props)
+	console.log('props in home', msgAlert)
 
 	return (
 		<div className='homeItems'>
-			<MyPieChart msgAlert={msgAlert} user={user}/>
+			<MyPieChart user={user}/>
 			<IndexExpenses msgAlert={msgAlert} user={user} />
 		</div>
 	)

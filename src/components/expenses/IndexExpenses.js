@@ -4,6 +4,7 @@ import LoadingScreen from '../shared/LoadingScreen'
 import { getAllExpenses } from '../../api/expenses'
 import { messages } from '../shared/AutoDismissAlert/messages'
 import './IndexExpenses.css'
+import { Card } from 'react-bootstrap'
 
 //style for our card container
 const cardContainerStyle = {
@@ -15,12 +16,14 @@ const cardContainerStyle = {
 
 const expenseCard = {
   textAlign: "center",
+  fontFace: "bold",
   backgroundColor: "darkblue",
   color:'grey',
-  width: '30%', 
+  // width: '100%', 
+  height: '180px',
   margin: '10px',
-  border: '20px solid skyBlue',
-  borderRadius: '200px',
+  border: '10px solid skyBlue',
+  borderRadius: '100px',
 }
 
 const IndexExpenses = (props) => {
@@ -28,17 +31,18 @@ const IndexExpenses = (props) => {
   const [error, setError] = useState(false)
   const { msgAlert } = props
   
+  console.log(props)
 useEffect(() => {
   getAllExpenses()
   .then(res => setExpenses(res.data.expenses))
   .catch(err => {msgAlert ({
-    heading: 'error getting reviews',
+    heading: 'error getting expenses',
     message: messages.getReviewsFailure,
     variant: 'danger',
     })
   setError(true)
   })
-}, [msgAlert])
+}, [])
 
 
   if (error) {
@@ -53,11 +57,14 @@ useEffect(() => {
   }
 
   const expenseCards = expenses.map(expense => (
-      <Card style={expenseCard} key={ expense.id }>
-        <Card.Header>{expense.title}</Card.Header>
+      <Card style={expenseCard} key={ expense._id }>
+        {/* <Card.Header></Card.Header> */}
         <Card.Body>
+        {expense.title}
+        <br></br>
+          ${expense.amount}
           <Card.Text>
-            <Link to={`/expenses/${expense._id}`}>Read it!</Link><br></br>
+            <Link to={`/expenses/${expense._id}`}>View</Link><br></br>
           </Card.Text>
         </Card.Body>
       </Card>

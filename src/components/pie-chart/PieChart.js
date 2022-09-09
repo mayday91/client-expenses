@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import { Doughnut, Pie } from 'react-chartjs-2';
+import { Doughnut } from 'react-chartjs-2';
 import './PieChart.css'
 // import { getAllExpenses } from '../../api/expenses'
-import { messages } from '../shared/AutoDismissAlert/messages'
-import IndexExpenses from '../expenses/IndexExpenses';
+// import IndexExpenses from '../expenses/IndexExpenses';
 import apiUrl from '../../apiConfig'
 import axios from 'axios'
 
@@ -13,7 +12,7 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 const MyPieChart = (props) => {
   const [expenses, setExpenses] = useState()
-  const { cats } = props
+  // const { cats } = props
   const getAllExpenses = () => {
     return axios(`${apiUrl}/expenses`)
   }
