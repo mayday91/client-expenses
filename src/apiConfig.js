@@ -1,7 +1,7 @@
 let apiUrl
 const apiUrls = {
     // YOU MUST CHANGE PRODUCTION URL WHEN DEPLOYING
-	production: 'https://mayday-expenses.herokuapp.com/',
+	production: 'https://mayday-proxy.herokuapp.com/https://mayday-expenses.herokuapp.com/',
 	development: 'http://localhost:3001',
 }
 
