@@ -8,7 +8,6 @@ import { Container, Card, Button } from 'react-bootstrap'
 
 import LoadingScreen from '../shared/LoadingScreen'
 import { getOneExpense, updateExpense, removeExpense } from '../../api/expenses'
-import messages from '../shared/AutoDismissAlert/messages'
 import EditExpenseModal from './EditExpense'
 import NewNoteModal from '../notes/NewNote'
 import ShowNote from '../notes/ShowNote'
@@ -44,7 +43,7 @@ const ShowExpense = (props) => {
     // useNavigate returns a function
     // we can call that function to redirect the user wherever we want to
 
-    const { user, msgAlert } = props
+    const { user } = props
     console.log('user in props of showExpense', user)
     console.log('the expense in showExpense', expense)
     // destructuring to get the id value from our route parameters
@@ -60,23 +59,8 @@ const ShowExpense = (props) => {
         console.log('in removeTheExpense', expense)
         console.log('is this the id I need?', id)
         removeExpense(user, expense._id)
-            // on success send a success message
-            .then(() => {
-                msgAlert({
-                    heading: 'Success',
-                    message: messages.removeReviewSuccess,
-                    variant: 'success'
-                })
-            })
             .then(() => {navigate('/')})
-            .catch(err => {     
-              console.log(err)              
-                msgAlert({
-                    heading: 'Error removing expense',
-                    message: messages.removeReviewFailure,
-                    variant: 'danger'
-                })
-            })
+            .catch(err => console.log(err))
     }
     let noteCards
     if (expense) {
@@ -88,7 +72,6 @@ const ShowExpense = (props) => {
                     note={note}
                     expense={expense}
                     user={user}
-                    msgAlert={msgAlert}
                     triggerRefresh={() => setUpdated(prev => !prev)}
                 />
             ))
@@ -148,7 +131,6 @@ const ShowExpense = (props) => {
                 expense={expense} 
                 show={editModalShow} 
                 updateExpense={updateExpense}
-                msgAlert={msgAlert}
                 triggerRefresh={() => setUpdated(prev => !prev)}
                 handleClose={() => setEditModalShow(false)} 
             />
@@ -156,7 +138,6 @@ const ShowExpense = (props) => {
                 expense={expense}
                 show={noteModalShow}
                 user={user}
-                msgAlert={msgAlert}
                 triggerRefresh={() => setUpdated(prev => !prev)}
                 handleClose={() => setNoteModalShow(false)} 
             />

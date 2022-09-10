@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { signUp, signIn } from '../../api/auth'
-import messages from '../shared/AutoDismissAlert/messages'
 
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
@@ -27,30 +26,19 @@ const SignUp = (props) => {
 	const onSignUp = (event) => {
 		event.preventDefault()
 
-		const { msgAlert, setUser } = props
+		const { setUser } = props
 
         const credentials = {email, password, passwordConfirmation}
 
 		signUp(credentials)
 			.then(() => signIn(credentials))
 			.then((res) => setUser(res.data.user))
-			.then(() =>
-				msgAlert({
-					heading: 'Sign Up Success',
-					message: messages.signUpSuccess,
-					variant: 'success',
-				})
-			)
+			
 			.then(() => navigate('/'))
 			.catch((error) => {
                 setEmail('')
                 setPassword('')
                 setPasswordConfirmation('')
-				msgAlert({
-					heading: 'Sign Up Failed with error: ' + error.message,
-					message: messages.signUpFailure,
-					variant: 'danger',
-				})
 			})
 	}
 
