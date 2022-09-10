@@ -1,6 +1,6 @@
 {
   "name": "expenses",
-  "homepage": "https://app.netlify.com/sites/mayday-expenses",
+  "homepage": "https://client-expenses.up.railway.app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

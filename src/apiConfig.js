@@ -1,8 +1,8 @@
 let apiUrl
 const apiUrls = {
     // YOU MUST CHANGE PRODUCTION URL WHEN DEPLOYING
-	production: 'https://api-expenses-production.up.railway.app/',
-	development: 'http://localhost:8000',
+	production: 'https://mayday-expenses.herokuapp.com/',
+	development: 'http://localhost:3001',
 }
 
 if (window.location.hostname === 'localhost') {
