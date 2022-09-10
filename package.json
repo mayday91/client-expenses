@@ -1,6 +1,6 @@
 {
-  "name": "react-auth-boilerplate",
-  "homepage": "https://myusername.github.io/my-app",
+  "name": "expenses",
+  "homepage": "https://app.netlify.com/sites/mayday-expenses",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -32,7 +32,7 @@
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
-        "eject": "react-scripts eject"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -51,6 +51,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "proxy": "http://localhost:5000"
+  }
 }
