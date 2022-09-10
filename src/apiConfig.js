@@ -1,7 +1,7 @@
 let apiUrl
 const apiUrls = {
     // YOU MUST CHANGE PRODUCTION URL WHEN DEPLOYING
-	production: 'https://mayday-proxy.herokuapp.com/https://expenses-server.up.railway.app',
+	production: 'https://cors-anywhere.herokuapp.com/https://expenses-server.up.railway.app',
 	development: 'http://localhost:3001',
 }
 
