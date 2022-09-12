@@ -43,6 +43,7 @@ const ShowExpense = (props) => {
     const [editModalShow, setEditModalShow] = useState(false)
     const [noteModalShow, setNoteModalShow] = useState(false)
     const [updated, setUpdated] = useState(null)
+    // const [user, setUser] = useState(null)
 
     const {id} = useParams()
     const navigate = useNavigate()
