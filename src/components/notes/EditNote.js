@@ -36,13 +36,7 @@ const EditNoteModal = (props) => {
             // if we're successful in the modal, we want the modal to close
             .then(() => handleClose())
             // send a success message to the user
-            .then(() => {
-                msgAlert({
-                    heading: 'Oh Yeah!',
-                    message: 'Great! The note will be read!',
-                    variant: 'success'
-                })
-            })
+            
             .then(() => triggerRefresh())
             // if there is an error, tell the user about it
             .catch(() => 

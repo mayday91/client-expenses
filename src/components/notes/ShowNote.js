@@ -10,20 +10,9 @@ const ShowNote = (props) => {
 
     // calls this to destroy a note
     const destroyNote = () => {
-        deleteNote(user, expense.id, note.id)
-            .then(() => 
-                msgAlert({
-                    heading: 'Note Deleted',
-                    message: 'Bye note!',
-                    variant: 'success'
-                }))
+        deleteNote(user, expense._id, note._id)
             .then(() => triggerRefresh())
-            .catch(() => 
-                msgAlert({
-                    heading: 'Oh no!',
-                    message: 'Something went wrong!',
-                    variant: 'danger'
-                }))
+            .catch(err => console.log(err))
     }
 
     return (

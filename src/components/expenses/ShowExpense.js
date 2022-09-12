@@ -84,17 +84,17 @@ const ShowExpense = (props) => {
         <div>
             <Container style={cardContainerLayout}>
                 <Card style={expenseCard}>
-                    <Card.Header>Expense: { expense.title }<br></br>Amount: ${ expense.amount }</Card.Header>
+                    <Card.Header>{ expense.title }<br></br>${ expense.amount }</Card.Header>
                     <Card.Body>
                         <Card.Text>
-                            <div><small>Category: { expense.category }</small><br></br>Tracked by: { expense.userName }</div>
+                            <div><small>Category [ { expense.category } ]</small><br></br>Tracked by [ { user.username } ]</div>
                         </Card.Text>
                     </Card.Body>
                     <Card.Footer>
                         <Button onClick={() => setNoteModalShow(true)}
-                            className="m-2" variant="dark"
+                             variant="dark"
                         >
-                            Leave a note on {expense.title} !
+                            Leave A Note
                         </Button>
                         {
                             // expense.owner && user && expense.owner._id === user.id 
@@ -102,14 +102,12 @@ const ShowExpense = (props) => {
                             ?
                             <div className="buttons">
                                 <Button onClick={() => setEditModalShow(true)} 
-                                    className="m-2" 
                                     variant="warning"
                                 >
                                     Edit Expense
                                 </Button>
                                 
                                 <Button onClick={() => removeTheExpense()}
-                                    className="m-2"
                                     variant="danger"
                                 >
                                     Delete Expense

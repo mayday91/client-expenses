@@ -3,7 +3,7 @@ import axios from 'axios'
 
 // CREATE
 export const createNote = (user, expenseId, newNote) => {
-  console.log('this is the new toy in createNote', newNote)
+  console.log('this is the new note in createNote', newNote)
   console.log('this is user in createNote', user)
 	return axios({
 		url: `${apiUrl}/notes/${expenseId}`,
