@@ -154,7 +154,7 @@ const MyPieChart = (props) => {
         label: 'Expenses',
         data: [180, 20, 34, 45],
         backgroundColor: [
-          'rgba(237, 73, 134, 0.4)',
+          'lightGreen',
           'rgba(194, 8, 137, 0.4)',
           'rgba(176, 73, 237, 0.4)',
           'rgba(135, 84, 168, 0.4)',

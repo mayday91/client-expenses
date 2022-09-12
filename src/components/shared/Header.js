@@ -55,7 +55,7 @@ const Header = ({ user }) => (
 				eXpense
 			</Link>
 				{user && (
-					<span className='navbar-text welcome-user mr-2'>Welcome, {user.email}</span>
+					<span className='username'>Welcome {user.username} !</span>
 				)}
     </Navbar.Brand>
 		<Navbar.Toggle aria-controls='basic-navbar-nav' />

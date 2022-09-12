@@ -16,14 +16,17 @@ const cardContainerStyle = {
 const expenseCard = {
   // flex: 0.6,
   textAlign: "center",
-  backgroundColor: "rgba(155, 8, 194, 0.6)",
+  backgroundColor: "green",
   color:'black',
   width: '300px', 
   margin: '10px',
-  border: '5px solid rgba(155, 8, 194, 0.6)',
+  border: '5px solid lightGreen',
   borderRadius: '20px',
-  textDecoration: 'none',
-  linkColor: 'white'
+}
+
+const linkStyle = {
+  color: "white",
+  textDecoration: "none"
 }
 
 const IndexExpenses = (props) => {
@@ -61,7 +64,7 @@ useEffect(() => {
         <br></br>
           ${expense.amount}
           <Card.Text>
-            <Link to={`/expenses/${expense._id}`}>View</Link><br></br>
+            <Link style={linkStyle} to={`/expenses/${expense._id}`}>View</Link><br></br>
           </Card.Text>
         </Card.Body>
       </Card>

@@ -33,8 +33,7 @@ const NewNoteModal = (props) => {
     .then(() => handleClose())
     .then(() => {
       msgAlert({
-        heading: 'Oh Yeah!',
-        message: 'Great! They love your comment!',
+        message: 'Great!',
         variant: 'success'
       })
     })

@@ -3,3 +3,8 @@
   justify-content: space-between;
   /* height: 100vh; */
 }
+
+.indexExpenses {
+  text-align: center;
+  padding-left: 10vw;
+}
