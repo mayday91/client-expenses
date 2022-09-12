@@ -1,6 +1,5 @@
 .homeItems {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  height: 100vh;
+  display: grid;
+  justify-content: space-between;
+  /* height: 100vh; */
 }

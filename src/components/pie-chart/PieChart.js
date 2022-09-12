@@ -180,8 +180,9 @@ const MyPieChart = (props) => {
   return (
     
       <div className="pie-chart">
-        <h1 className='pie-chart-title'>Your Spending Habits</h1>
+        
         <Doughnut data={data} {...props}/>
+
       </div>
       
     

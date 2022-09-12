@@ -7,11 +7,10 @@ import { Card } from 'react-bootstrap'
 
 //style for our card container
 const cardContainerStyle = {
-  display: 'flex',
-  flexFlow: 'row wrap',
+  display: 'grid',
+  // flexFlow: 'row wrap',
   justifyContent: 'center',
   padding: '10px',
-  flex: 0.6,
 }
 
 const expenseCard = {
@@ -68,13 +67,13 @@ useEffect(() => {
       </Card>
     ))
   return (
-    
-      <div style={ cardContainerStyle }>
+    <div className='yourExpenses'>
+        
+      <div>
         <br></br>
-        <h1 className='yourExpenses'>Your Expenses</h1>
         { expenseCards }
       </div>
-     
+    </div>
     )
 }
 

@@ -10,8 +10,8 @@ a {
 }
 
 .yourExpenses {
-  padding: 10px;
-  margin: 10px;
-  /* margin-top: 10px; */
+  display: grid;
+  width: 100vw;
+  height: 100vh;
   text-align: center;
 }

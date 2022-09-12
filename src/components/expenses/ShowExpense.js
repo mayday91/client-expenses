@@ -15,11 +15,9 @@ import './ShowExpense.css'
 
 const cardContainerLayout = {
     display: 'flex',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     flexFlow: 'row wrap',
     margin: '10px',
-    padding: '20px',
-    border: '5px solid darkgrey'
 }
 
 const expenseCard = {
