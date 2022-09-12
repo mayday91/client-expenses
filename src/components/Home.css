@@ -1,10 +1,23 @@
 .homeItems {
   display: grid;
   justify-content: space-between;
+  overflow-x: auto;
+  white-space: nowrap;
   /* height: 100vh; */
 }
 
 .indexExpenses {
   text-align: center;
   padding-left: 10vw;
+  width: 100vw;
+}
+
+.mobile-class {
+  background-color: purple;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.desktop-class {
+  background-color: blue;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
