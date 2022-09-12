@@ -31,12 +31,6 @@ const NewNoteModal = (props) => {
     createNote(user, expense._id, note)
     // if we're successful in modal we want modal to close
     .then(() => handleClose())
-    .then(() => {
-      msgAlert({
-        message: 'Great!',
-        variant: 'success'
-      })
-    })
     // if everything successful we need to trigger refresh for show page
     // changes to the updated boolean cause ShowReview's useEffect to run again
     .then(() => triggerRefresh())

@@ -29,7 +29,7 @@ const ShowNote = (props) => {
     return (
         <>
             <Card className="m-2">
-                <Card.Header>{note.userName}</Card.Header>
+                <Card.Header>{user.username}</Card.Header>
                 <Card.Body>
                     <small>{note.body}</small><br/>
 
