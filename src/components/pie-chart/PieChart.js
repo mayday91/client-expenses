@@ -1,61 +1,61 @@
-// // import React, { useEffect, useState, PureComponent } from 'react';
-// // import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
-// // import { getAllExpenses } from '../../api/expenses'
+// import React, { useEffect, useState, PureComponent } from 'react';
+// import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
+// import { getAllExpenses } from '../../api/expenses'
 
-// // const data = getAllExpenses
-// // const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#FFFFFF', '#FFFF00', '#000000'];
+// // // const data = getAllExpenses
+// const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#FFFFFF', '#FFFF00', '#000000'];
 
-// // const MyPieChart = () => {
+// const MyPieChart = () => {
 
-// //   const data = []
-// //   const [setExpenses] = useState(null)
+//   const data = []
+//   const [expenses, setExpenses] = useState(null)
 
-// //   useEffect(() => {
-// //     getAllExpenses()
-// //     .then(res => setExpenses(res.data.expenses))
-// //     .catch(err => console.log(err))
-// //   })
+//   useEffect(() => {
+//     getAllExpenses()
+//     .then(res => setExpenses(res.data.expenses))
+//     .catch(err => console.log(err))
+//   })
 
-// //     return (
-// //       <ResponsiveContainer width="100%" height="100%">
-// //       <PieChart width={800} height={400} >
-// //         <Pie
-// //           data={data}
-// //           cx={120}
-// //           cy={200}
-// //           innerRadius={60}
-// //           outerRadius={80}
-// //           fill="#8884d8"
-// //           paddingAngle={5}
-// //           dataKey="value"
-// //         >
-// //           {data.map((expense, categories) => (
-// //             <Cell key={`cell-${categories}`} fill={COLORS[categories % COLORS.length]} />
-// //           ))}
-// //         </Pie>
-// //         <Pie
-// //           data={data}
-// //           cx={420}
-// //           cy={200}
-// //           startAngle={180}
-// //           endAngle={0}
-// //           innerRadius={60}
-// //           outerRadius={80}
-// //           fill="#8884d8"
-// //           paddingAngle={5}
-// //           dataKey="value"
-// //         >
-// //           {data.map((entry, index) => (
-// //             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-// //           ))}
-// //         </Pie>
-// //       </PieChart>
-// //       </ResponsiveContainer>
-// //     );
+//     return (
+//       <ResponsiveContainer width="100%" height="100%">
+//       <PieChart width={800} height={400} >
+//         <Pie
+//           data={data}
+//           cx={120}
+//           cy={200}
+//           innerRadius={60}
+//           outerRadius={80}
+//           fill="#8884d8"
+//           paddingAngle={5}
+//           dataKey="value"
+//         >
+//           {expenses.map((expense) => (
+//             <Cell key={`cell-${expense}`} fill={COLORS[expense% COLORS.length]} />
+//           ))}
+//         </Pie>
+//         <Pie
+//           data={data}
+//           cx={420}
+//           cy={200}
+//           startAngle={180}
+//           endAngle={0}
+//           innerRadius={60}
+//           outerRadius={80}
+//           fill="#8884d8"
+//           paddingAngle={5}
+//           dataKey="value"
+//         >
+//           {expenses.map((entry, index) => (
+//             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+//           ))}
+//         </Pie>
+//       </PieChart>
+//       </ResponsiveContainer>
+//     );
   
-// // }
+// }
 
-// // export default MyPieChart
+// export default MyPieChart
 
 
 
@@ -131,7 +131,7 @@ const MyPieChart = (props) => {
     getAllExpenses()
     .then(res => setExpenses(res.data.expenses))
     .catch(err => console.log(err, 'error in getting expenses for pie chart'))
-  }, [])
+  }, [setExpenses])
 
   // const expenseCards = expenses.map(expense => ()
 
@@ -144,7 +144,7 @@ const MyPieChart = (props) => {
   // set to array of numbers
 
 
-  // const data1 = expenses[0].amount
+  // const data1 = expenses[10].amount
   // const data2 = expenses[1].amount
 
   const data = {
@@ -152,7 +152,7 @@ const MyPieChart = (props) => {
     datasets: [
       {
         label: 'Expenses',
-        data: [180, 20, 34, 45],
+        data: [190, 20, 34, 45],
         backgroundColor: [
           'lightGreen',
           'rgba(194, 8, 137, 0.4)',
@@ -190,4 +190,3 @@ const MyPieChart = (props) => {
 }
 
 export default MyPieChart
-

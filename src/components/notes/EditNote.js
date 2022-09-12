@@ -6,7 +6,7 @@ import { updateNote } from '../../api/notes'
 
 const EditNoteModal = (props) => {
     const { 
-        user, expense, show, handleClose, msgAlert, triggerRefresh
+        user, expense, show, handleClose, triggerRefresh
     } = props
 
     const [note, setNote] = useState(props.note)
@@ -39,13 +39,7 @@ const EditNoteModal = (props) => {
             
             .then(() => triggerRefresh())
             // if there is an error, tell the user about it
-            .catch(() => 
-                msgAlert({
-                    heading: 'Oh No!',
-                    message: 'Something went wrong, please try again',
-                    variant: 'danger'
-                })
-            )
+            .catch(err => console.log(err))
     }
 
     return (

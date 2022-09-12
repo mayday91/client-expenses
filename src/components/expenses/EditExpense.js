@@ -39,13 +39,7 @@ const EditExpenseModal = (props) => {
         })
       })
       .then(() => triggerRefresh())
-        .catch(() => 
-          msgAlert({
-            heading: 'Oh No!',
-            message: updateReviewFailure,
-            variant: 'danger'
-          })
-        )
+        .catch(err => console.log(err))
   }
 
   return (

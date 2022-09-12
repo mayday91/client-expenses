@@ -3,6 +3,7 @@ import { createExpense } from "../../api/expenses"
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { createExpenseSuccess, createExpenseFailure } from  '../shared/AutoDismissAlert/messages'
+import { SettingsOverscanOutlined } from "@material-ui/icons";
 
 const CreateExpense = (props) => {
   console.log('these are the props in Create Expense', props)
@@ -16,7 +17,9 @@ const CreateExpense = (props) => {
 
   console.log('this is expense in createExpense', expense)
 
- 
+ const handleRefresh = () => {
+  setExpense({})
+}
 
   const handleChange = (e) => {
     setExpense(prevExpense => {
@@ -70,6 +73,7 @@ const CreateExpense = (props) => {
   expense={ expense } 
   handleChange={ handleChange }
   handleSubmit={ handleSubmit }
+  handleRefresh={ handleRefresh }
   heading='Add an expense.'
   />
 }

@@ -24,7 +24,9 @@ const NewNoteModal = (props) => {
     })
   }
  
-  
+  const handleRefresh = () => {
+    setNote({})
+  }
   const handleSubmit = (e) => {
     e.preventDefault()
 
@@ -54,6 +56,7 @@ const NewNoteModal = (props) => {
             note={note}
             handleChange={handleChange}
             handleSubmit={handleSubmit}
+            handleRefresh={handleRefresh}
             heading='Leave a note!'
           />
         </Modal.Body>

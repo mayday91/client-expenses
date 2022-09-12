@@ -20,9 +20,17 @@ const cardContainerLayout = {
     margin: '10px',
 }
 
-const expenseCard = {
+const expenseClass = {
     textAlign: "center",
-    backgroundColor: "black",
+    backgroundColor: "red",
+    fontSize: "30px",
+    fontFamily: "Times",
+    width: "fit-content",
+    color: "skyblue"
+}
+const incomeClass = {
+    textAlign: "center",
+    backgroundColor: "green",
     fontSize: "30px",
     fontFamily: "Times",
     width: "fit-content",
@@ -65,7 +73,7 @@ const ShowExpense = (props) => {
         if (expense.notes.length > 0) {
             noteCards = expense.notes.map(note => (
                 <ShowNote 
-                    style={expenseCard}
+                    style={expenseClass}
                     key={note._id}
                     note={note}
                     expense={expense}
@@ -80,14 +88,17 @@ const ShowExpense = (props) => {
         return <LoadingScreen />
     }
 
+    
+  
+
     return (
         <div>
-            <Container style={cardContainerLayout}>
-                <Card style={expenseCard}>
+                <Container style={cardContainerLayout}>
+                <Card style={expenseClass}>
                     <Card.Header>{ expense.title }<br></br>${ expense.amount }</Card.Header>
                     <Card.Body>
                         <Card.Text>
-                            <div><small>Category [ { expense.category } ]</small><br></br>Tracked by [ { user.username } ]</div>
+                            <div><small>Category [ { expense.category } ]</small><br></br>Tracked by [ {  } ]</div>
                         </Card.Text>
                     </Card.Body>
                     <Card.Footer>
@@ -120,7 +131,7 @@ const ShowExpense = (props) => {
                 </Card>
             </Container>
             <Container style={cardContainerLayout}>
-                <div style={expenseCard}>{noteCards}</div>
+                <div style={expenseClass}>{noteCards}</div>
             </Container>
             <EditExpenseModal 
                 user={user}
