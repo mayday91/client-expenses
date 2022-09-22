@@ -56,18 +56,18 @@ export const changePassword = (passwords, user) => {
 }
 
 
-export const changeEmail = (email, user) => {
-	return axios({
-		url: apiUrl + '/accounts/change-email',
-		method: 'PATCH',
-		headers: {
-			Authorization: `Token token=${user.token}`,
-		},
-		data: {
-			email: {
-				old: email.oldEmail,
-				new: email.newEmail,
-			},
-		},
-	})
-}
+// export const changeEmail = (email, user) => {
+// 	return axios({
+// 		url: apiUrl + '/accounts/change-email',
+// 		method: 'PATCH',
+// 		headers: {
+// 			Authorization: `Token token=${user.token}`,
+// 		},
+// 		data: {
+// 			email: {
+// 				old: email.oldEmail,
+// 				new: email.newEmail,
+// 			},
+// 		},
+// 	})
+// }

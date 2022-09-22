@@ -24,7 +24,7 @@ const unauthenticatedOptions = (
 
 
 
-const NewUser = ({ user }) => (
+const NewUser = () => (
 	<>
 		 { unauthenticatedOptions }
   </>

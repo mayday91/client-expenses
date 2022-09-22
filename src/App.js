@@ -4,7 +4,6 @@ import { Route, Routes } from 'react-router-dom'
 import { v4 as uuid } from 'uuid'
 import ShowExpense from './components/expenses/ShowExpense'
 import CreateExpense from './components/expenses/CreateExpense'
-import HomeIcon from '@material-ui/icons/Home';
 import PieChart from '../src/components/pie-chart/PieChart'
 
 // import AuthenticatedRoute from './components/shared/AuthenticatedRoute'
@@ -17,7 +16,6 @@ import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
-import ChangeEmail from './components/auth/ChangeEmail'
 import IndexExpenses from './components/expenses/IndexExpenses'
 import AccountPage from './components/accountPage/AccountPage'
 import AboutPage from './components/shared/AboutPage'
@@ -52,13 +50,12 @@ const App = () => {
 		return (
 			<>
 				<Header user={user} />
-
 				<Routes>
 					<Route 
 						path='/' 
 						element={
 						<RequireAuth>
-						<Home user={user} Icon={HomeIcon}/>
+						<Home user={user} />
 						</RequireAuth>
 						} 
 					/>
@@ -118,14 +115,14 @@ const App = () => {
             </RequireAuth>
 						}
           />
-          <Route
+          {/* <Route
             path='/accounts/change-email'
             element={
             <RequireAuth user={user}>
             <ChangeEmail msgAlert={msgAlert} user={user} />
             </RequireAuth>
 						}
-          />
+          /> */}
 					<Route 
 						path='/expenses/:id'
 						element={ 
@@ -141,9 +138,6 @@ const App = () => {
 						}
 					/>
 				</Routes>
-
-
-
 				<Footer user={user} />
 				
 				{msgAlerts.map((msgAlert) => (

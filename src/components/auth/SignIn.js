@@ -15,7 +15,7 @@ const SignIn = (props) => {
 	// 		password: '',
 	// 	}
 	// }
-    const [email, setEmail] = useState('')
+    // const [email, setEmail] = useState('')
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
@@ -31,7 +31,7 @@ const SignIn = (props) => {
         console.log('the props', props)
 		const {  setUser } = props
 
-        const credentials = { email, username, password}
+        const credentials = { username, password}
 
 		signIn(credentials)
 			.then((res) => setUser(res.data.user))

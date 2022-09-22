@@ -1,8 +1,7 @@
-import {useEffect, useState} from 'react'
-import Nav from 'react-bootstrap/Nav'
+import React from 'react'
+// import Nav from 'react-bootstrap/Nav'
 import { Link } from 'react-router-dom'
 import './AccountPage.css'
-import getAllExpenses from '../expenses/IndexExpenses'
 
 
 const linkStyle = {
@@ -16,11 +15,6 @@ const authenticatedOptions = (
 	<div className='authOptions'>	
 			<Link to='change-password' style={linkStyle}>
 				Change Password
-			</Link>
-			<br></br>
-			<br></br>
-			<Link to='change-email' style={linkStyle}>
-				Change Email Address
 			</Link>
 			<br></br>
 			<br></br>
@@ -49,8 +43,8 @@ const alwaysOptions = (
 	</div>
 )
 
-const AccountManage = ({ user, Expenses }) => {
-	console.log('expenses', Expenses)
+const AccountManage = ({ user }) => {
+	
 
 	// const [expenses, setExpenses] = useState(null)
   
@@ -67,7 +61,7 @@ const AccountManage = ({ user, Expenses }) => {
 			<p>Username: {user.username}</p>
 			Email Address: {user.email}
 			<br></br>
-			{/* {Expenses.length} */}
+		
 			
 			<br></br>
 			<br></br>

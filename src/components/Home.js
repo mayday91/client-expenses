@@ -16,14 +16,6 @@ const Home = (props) => {
 		<>
 		{ user?.username ? <MyPieChart /> : <NewUser />}
 		</>	
-		// <div className='homeItems'>
-		// 	<div className="pieChart">
-		// 	{/* <MyPieChart user={user}/> */}
-		// 	</div>
-		// 	<div className="indexExpenses">
-		// 	{/* <IndexExpenses msgAlert={msgAlert} user={user} /> */}
-		// 	</div>
-		// </div>
 	)
 }
  
