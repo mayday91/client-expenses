@@ -44,11 +44,9 @@ const authenticatedOptions = (
 // )
 
 const alwaysOptions = (
-	<>
-		<Nav.Item>
-			
-		</Nav.Item>
-	</>
+	<div>
+		<a href="/">Home</a>
+	</div>
 )
 
 const AccountManage = ({ user, Expenses }) => {

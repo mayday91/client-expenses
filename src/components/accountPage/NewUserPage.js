@@ -11,31 +11,23 @@ const linkStyle = {
 
 
 const unauthenticatedOptions = (
-	<div className='noAuthOptions'>
-        <h2>Have an account?</h2>
-		    <Link to='accounts/sign-in' style={linkStyle}>Sign In
-        </Link><br></br>
-				<br></br>
-				<h2>Need to make one?</h2>
-		    <Link to='accounts/sign-up' style={linkStyle}>Sign Up
-        </Link>
+	<div className='accountOptions'>
+		<h2>Have an account?</h2>
+		<Link to='accounts/sign-in' style={linkStyle}>Sign In
+		</Link><br></br>
+		<br></br>
+		<h2>Need to make one?</h2>
+		<Link to='accounts/sign-up' style={linkStyle}>Sign Up
+		</Link>
 	</div>
 )
 
-const alwaysOptions = (
-	<>
-		<Nav.Item>
-			
-		</Nav.Item>
-	</>
-)
+
 
 const NewUser = ({ user }) => (
-	<div className='accountOptions'>
-    
+	<>
 		 { unauthenticatedOptions }
-			
-  </div>
+  </>
 )
 
 export default NewUser

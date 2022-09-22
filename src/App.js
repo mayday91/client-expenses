@@ -50,7 +50,7 @@ const App = () => {
 	}
 
 		return (
-			<div className='appStyle'>
+			<>
 				<Header user={user} />
 
 				<Routes>
@@ -58,7 +58,7 @@ const App = () => {
 						path='/' 
 						element={
 						<RequireAuth>
-						<Home msgAlert={msgAlert} user={user} Icon={HomeIcon}/>
+						<Home user={user} Icon={HomeIcon}/>
 						</RequireAuth>
 						} 
 					/>
@@ -66,7 +66,7 @@ const App = () => {
 						path='/expenses' 
 						element={
 						<RequireAuth>
-						<IndexExpenses msgAlert={msgAlert} user={user}/>
+						<IndexExpenses user={user}/>
 						</RequireAuth>
 						} 
 					/>
@@ -80,7 +80,7 @@ const App = () => {
 						path='/accounts' 
 						element={
 						<RequireAuth>
-						<AccountPage msgAlert={msgAlert} user={user} />
+						<AccountPage user={user} />
 						</RequireAuth>
 						} 
 					/>
@@ -88,7 +88,7 @@ const App = () => {
 						path='/chart' 
 						element={
 						<RequireAuth>
-						<PieChart msgAlert={msgAlert} user={user} />
+						<PieChart  user={user} />
 						</RequireAuth>
 						} 
 					/>
@@ -129,7 +129,7 @@ const App = () => {
 					<Route 
 						path='/expenses/:id'
 						element={ 
-						<ShowExpense user={ user } msgAlert={ msgAlert }/> 
+						<ShowExpense user={ user } /> 
 						}
 					/>
 					<Route
@@ -156,7 +156,7 @@ const App = () => {
 						deleteAlert={deleteAlert}
 					/>
 				))}
-			</div>
+			</>
 		)
 }
 

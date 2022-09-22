@@ -122,7 +122,7 @@ import axios from 'axios'
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const MyPieChart = (props) => {
-  const [expenses, setExpenses] = useState()
+  // const [expenses, setExpenses] = useState()
   // const { cats } = props
   const getAllExpenses = () => {
     return axios(`${apiUrl}/expenses`)
@@ -130,9 +130,9 @@ const MyPieChart = (props) => {
 
   useEffect(() => {
     getAllExpenses()
-    .then(res => setExpenses(res.data.expenses))
+    .then(res => (res.data.expenses))
     .catch(err => console.log(err, 'error in getting expenses for pie chart'))
-  }, [setExpenses])
+  }, [])
 
   // const expenseCards = expenses.map(expense => ()
 
@@ -143,7 +143,7 @@ const MyPieChart = (props) => {
   // for data map over amount
   // set new state variables
   // set to array of numbers
-  console.log('expenses in pie chart above data labels', expenses)
+  // console.log('expenses in pie chart above data labels', expenses)
 
   // const data1 = expenses[10].amount
   // const data2 = expenses[1].amount
@@ -179,15 +179,15 @@ const MyPieChart = (props) => {
     ],
   }
     console.log('data in pie chart', data)
-    console.log('expenses in pie chart', expenses)
+    // console.log('expenses in pie chart', expenses)
 
   return (
     
-      <div className="pie-chart">
+      <>
         
         <Doughnut data={data} {...props}/>
         
-      </div>
+      </>
       
     
     )
