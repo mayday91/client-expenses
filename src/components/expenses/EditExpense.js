@@ -31,19 +31,12 @@ const EditExpenseModal = (props) => {
     updateExpense(user, expense)
     // if we're successful in modal we want modal to close
       .then(() => handleClose())
-      .then(() => {
-        msgAlert({
-          heading: 'Oh Yeah!',
-          message: updateReviewSuccess,
-          variant: 'success'
-        })
-      })
       .then(() => triggerRefresh())
         .catch(err => console.log(err))
   }
 
   return (
-      <Modal show={show} onHide={handleClose}>
+      <Modal  className='signInForm' show={show} onHide={handleClose}>
         <Modal.Header closeButton />
 
         

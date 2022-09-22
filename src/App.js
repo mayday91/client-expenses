@@ -5,17 +5,22 @@ import { v4 as uuid } from 'uuid'
 import ShowExpense from './components/expenses/ShowExpense'
 import CreateExpense from './components/expenses/CreateExpense'
 import HomeIcon from '@material-ui/icons/Home';
+import PieChart from '../src/components/pie-chart/PieChart'
 
 // import AuthenticatedRoute from './components/shared/AuthenticatedRoute'
 import AutoDismissAlert from './components/shared/AutoDismissAlert/AutoDismissAlert'
 import Header from './components/shared/Header'
+import Footer from './components/shared/Footer'
 import RequireAuth from './components/shared/RequireAuth'
 import Home from './components/Home'
 import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
+import ChangeEmail from './components/auth/ChangeEmail'
 import IndexExpenses from './components/expenses/IndexExpenses'
+import AccountPage from './components/accountPage/AccountPage'
+import AboutPage from './components/shared/AboutPage'
 
 const App = () => {
 
@@ -45,8 +50,7 @@ const App = () => {
 	}
 
 		return (
-			<Fragment>
-
+			<div className='appStyle'>
 				<Header user={user} />
 
 				<Routes>
@@ -58,18 +62,48 @@ const App = () => {
 						</RequireAuth>
 						} 
 					/>
+					<Route 
+						path='/expenses' 
+						element={
+						<RequireAuth>
+						<IndexExpenses msgAlert={msgAlert} user={user}/>
+						</RequireAuth>
+						} 
+					/>
+					<Route 
+						path='/about' 
+						element={
+						<AboutPage />
+						} 
+					/>
+					<Route 
+						path='/accounts' 
+						element={
+						<RequireAuth>
+						<AccountPage msgAlert={msgAlert} user={user} />
+						</RequireAuth>
+						} 
+					/>
+					<Route 
+						path='/chart' 
+						element={
+						<RequireAuth>
+						<PieChart msgAlert={msgAlert} user={user} />
+						</RequireAuth>
+						} 
+					/>
 					<Route
-						path='/sign-up'
+						path='/accounts/sign-up'
 						element={<SignUp msgAlert={msgAlert} setUser={setUser} />
 						}
 					/>
 					<Route
-						path='/sign-in'
+						path='/accounts/sign-in'
 						element={<SignIn msgAlert={msgAlert} setUser={setUser} />
 						}
 					/>
           <Route
-            path='/sign-out'
+            path='/accounts/sign-out'
             element={
             <RequireAuth user={user}>
             <SignOut msgAlert={msgAlert} clearUser={clearUser} user={user} />
@@ -77,10 +111,18 @@ const App = () => {
             }
           />
           <Route
-            path='/change-password'
+            path='/accounts/change-password'
             element={
             <RequireAuth user={user}>
             <ChangePassword msgAlert={msgAlert} user={user} />
+            </RequireAuth>
+						}
+          />
+          <Route
+            path='/accounts/change-email'
+            element={
+            <RequireAuth user={user}>
+            <ChangeEmail msgAlert={msgAlert} user={user} />
             </RequireAuth>
 						}
           />
@@ -88,12 +130,6 @@ const App = () => {
 						path='/expenses/:id'
 						element={ 
 						<ShowExpense user={ user } msgAlert={ msgAlert }/> 
-						}
-					/>
-					<Route 
-						path='/expenses'
-						element={ 
-						<IndexExpenses user={ user } msgAlert={ msgAlert }/> 
 						}
 					/>
 					<Route
@@ -106,6 +142,10 @@ const App = () => {
 					/>
 				</Routes>
 
+
+
+				<Footer user={user} />
+				
 				{msgAlerts.map((msgAlert) => (
 					<AutoDismissAlert
 						key={msgAlert.id}
@@ -116,8 +156,7 @@ const App = () => {
 						deleteAlert={deleteAlert}
 					/>
 				))}
-
-			</Fragment>
+			</div>
 		)
 }
 

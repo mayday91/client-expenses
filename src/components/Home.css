@@ -1,15 +1,22 @@
 .homeItems {
   display: grid;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   overflow-x: auto;
   white-space: nowrap;
-  /* height: 100vh; */
+  height: 100vh;
+  background-color: white;
+  padding-top: 20px;
+  
 }
 
 .indexExpenses {
-  text-align: center;
+  /* text-align: center; */
   padding-left: 10vw;
   width: 100vw;
+  -webkit-font-smoothing: antialiased;
+  font-family: Helvetica;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .mobile-class {
@@ -18,6 +25,10 @@
 }
 
 .desktop-class {
-  background-color: blue;
+  /* background-color: blue; */
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+  /* padding-bottom: 70px; */
 }

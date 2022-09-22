@@ -3,5 +3,17 @@
 }
 
 .username {
-  color: rgb(101, 169, 96);
+  color: lightcoral;
+  position: fixed;
+  right: 2px;
+}
+
+.headerNavBar {
+  /* display: flex; */
+  background-color: #61c0bf;
+  border: 1px solid #eeddd2;
+  color: #c9356c;
+  position: inherit;
+  top: 0px;
+  /* box-shadow: 1px 2px 9px #150e10; */
 }

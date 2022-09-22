@@ -1,4 +1,26 @@
-buttons {
-  display: flex;
-  flex-direction: row;
+.buttons {
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* border: 2px solid black; */
+}
+
+.noteCards {
+  text-align: center;
+  background-color: lightcoral;
+  font-size: 30px;
+  font-family: Times;
+  width: fit-content;
+  color: darkgrey;
+}
+
+.buttonGroup {
+  /* justify-content: center; */
+  border: 2px solid black;
+}
+
+.showExpense {
+  height: 86vh;
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 10px;
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-
+import './Auth.css'
 import { changePassword } from '../../api/auth'
 import messages from '../shared/AutoDismissAlert/messages'
 
@@ -53,10 +53,10 @@ const ChangePassword = (props) => {
 
 
     return (
-        <div className='row'>
-            <div className='col-sm-10 col-md-8 mx-auto mt-5'>
+        <div className='signIn'>
+            <div className=''>
                 <h3>Change Password</h3>
-                <Form onSubmit={onChangePassword}>
+                <Form className='signInForm' onSubmit={onChangePassword}>
                     <Form.Group controlId='oldPassword'>
                         <Form.Label>Old password</Form.Label>
                         <Form.Control

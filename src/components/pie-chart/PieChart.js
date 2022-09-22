@@ -110,6 +110,7 @@
 import React, { useEffect, useState } from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
+// import { PieChart, Pie  } from 'recharts';
 import './PieChart.css'
 // import { getAllExpenses } from '../../api/expenses'
 // import IndexExpenses from '../expenses/IndexExpenses';
@@ -142,23 +143,26 @@ const MyPieChart = (props) => {
   // for data map over amount
   // set new state variables
   // set to array of numbers
-
+  console.log('expenses in pie chart above data labels', expenses)
 
   // const data1 = expenses[10].amount
   // const data2 = expenses[1].amount
 
+  // const expensesData = expenses.map(category => (
+
   const data = {
-    labels: ['Bills','Groceries', 'Entertainment', 'Clothes', 'Shoes'],
+    labels: ['Utilities','Food', 'Entertainment', 'Personal', 'Travel', 'Savings', 'Investment', 'Loan', 'Healthcare', 'Debt', 'Credit', 'Tech', 'Misc.'],
     datasets: [
       {
         label: 'Expenses',
-        data: [190, 20, 34, 45],
+        data: [190, 20, 34, 45,10,15,12,26,78,43,100,65,32,79],
         backgroundColor: [
-          'lightGreen',
+          '#ffb6b9',
           'rgba(194, 8, 137, 0.4)',
           'rgba(176, 73, 237, 0.4)',
           'rgba(135, 84, 168, 0.4)',
           'rgba(184, 35, 164, 0.4)',
+          '#f4e022',
           'rgba(129, 35, 184, 0.4)',
         ],
         borderColor: [
@@ -170,7 +174,7 @@ const MyPieChart = (props) => {
           'rgba(153, 102, 255, 1)',
         ],
         borderWidth: 2,
-        hoverOffset: 5
+        hoverOffset: 25
       },
     ],
   }
@@ -182,7 +186,7 @@ const MyPieChart = (props) => {
       <div className="pie-chart">
         
         <Doughnut data={data} {...props}/>
-
+        
       </div>
       
     

@@ -47,6 +47,7 @@ const ExpenseForm = (props) => {
         <option>Pick a category:</option>
         <option value='utilities'>Utilities</option>
         <option value='housing'>Housing</option>
+        <option value='pet'>Pet</option>
         <option value='ent'>Entertainment</option>
         <option value='food'>Food</option>
         <option value='travel'>Travel</option>
@@ -59,6 +60,8 @@ const ExpenseForm = (props) => {
         <option value='credit'>Credit</option>
         <option value='tech'>Tech</option>
         <option value='misc.'>Miscellaneous</option>
+        <option value='clothing'>Clothing</option>
+        <option value='kicks'>Kicks</option>
       </Form.Select>
         <Button type="submit">Submit</Button>
       </Form>

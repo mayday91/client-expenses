@@ -4,10 +4,11 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { createExpenseSuccess, createExpenseFailure } from  '../shared/AutoDismissAlert/messages'
 import { SettingsOverscanOutlined } from "@material-ui/icons";
+import './CreateExpense.css'
 
 const CreateExpense = (props) => {
   console.log('these are the props in Create Expense', props)
-  const { user, msgAlert } = props
+  const { user, triggerRefresh } = props
   const navigate = useNavigate()
   const [expense, setExpense] = useState({
     title: '',
@@ -49,27 +50,15 @@ const CreateExpense = (props) => {
     e.preventDefault()
     
     createExpense(user, expense)
-    // if we're successful, navigate to show page for new pet
+    // if we're successful, navigate to show page for new expense
     // send success message to user
-      .then(navigate(`/`))
-      .then(() => {
-        msgAlert({
-          heading: 'Oh Yeah!',
-          message: createExpenseSuccess,
-          variant: 'success'
-        })
-      })
+      .then(navigate(`/expenses`))
+      .then(() => triggerRefresh())
     // if error tell user
-      .catch(() => 
-        msgAlert({
-          heading: 'Oh No!',
-          message: createExpenseFailure,
-          variant: 'danger'
-        })
-      )
+      .catch(err => console.log(err))
   }
 
-  return <ExpenseForm 
+  return <ExpenseForm className='expenseForm'
   expense={ expense } 
   handleChange={ handleChange }
   handleSubmit={ handleSubmit }

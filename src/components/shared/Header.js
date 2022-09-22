@@ -4,67 +4,59 @@ import Navbar from 'react-bootstrap/Navbar'
 import { Link } from 'react-router-dom'
 import './Header.css'
 
+// const authenticatedOptions = (
+// 	<>
+// 		<Nav.Item>
+
+// 			<Link to='change-password' style={linkStyle}>
+// 				Change Password
+// 			</Link>
+// 		{/* </Nav.Item>
+// 		<Nav.Item> */}
+// 			<Link to='sign-out' style={linkStyle}>
+// 				Sign Out
+// 			</Link>
+// 		</Nav.Item>
+// 	</>
+// )
+
+// const unauthenticatedOptions = (
+// 	<>
+//         <Nav.Item>
+// 		    <Link to='sign-up' style={linkStyle}>Sign Up</Link>
+//         </Nav.Item>
+//         <Nav.Item>
+// 		    <Link to='sign-in' style={linkStyle}>Sign In</Link>
+//         </Nav.Item>
+// 	</>
+// )
+
+// const alwaysOptions = (
+// 	<>
+// 		<Nav.Item>
+
+// 		</Nav.Item>
+// 	</>
+// )
+
 const linkStyle = {
-    color: 'white',
-    textDecoration: 'none',
-		padding: '5px',
+		color: '#95e8d7',
+		textDecoration: 'none',
+		padding: '10px',
+		fontWeight: 'bold',
+		fontFamily: 'Trebuchet',
 }
-const authenticatedOptions = (
-	<>
-		<Nav.Item>
-		<Link to='/addExpense' style={linkStyle}>
-				Add Expenses
-			</Link>
-			<Link to='change-password' style={linkStyle}>
-				Change Password
-			</Link>
-		{/* </Nav.Item>
-		<Nav.Item> */}
-			<Link to='sign-out' style={linkStyle}>
-				Sign Out
-			</Link>
-		</Nav.Item>
-	</>
-)
-
-const unauthenticatedOptions = (
-	<>
-        <Nav.Item>
-		    <Link to='sign-up' style={linkStyle}>Sign Up</Link>
-        </Nav.Item>
-        <Nav.Item>
-		    <Link to='sign-in' style={linkStyle}>Sign In</Link>
-        </Nav.Item>
-	</>
-)
-
-const alwaysOptions = (
-	<>
-		<Nav.Item>
-			<Link to='/' style={linkStyle}>
-				Home
-			</Link>
-		</Nav.Item>
-	</>
-)
 
 const Header = ({ user }) => (
-	<Navbar bg='dark' variant='light' expand='md'>
-		<Navbar.Brand>
+	<Navbar className='headerNavBar navBar navbar navbar-fixed-top'>
+		<Navbar.Brand >
       <Link to='/' style={linkStyle}>
-				eXpense
+				Pecunia
 			</Link>
 				{user && (
-					<span className='username'>Welcome {user.username} !</span>
+					<Link to='/accounts' style={linkStyle}className='username'> {user.username} </Link>
 				)}
     </Navbar.Brand>
-		<Navbar.Toggle aria-controls='basic-navbar-nav' />
-		<Navbar.Collapse id='basic-navbar-nav'>
-			<Nav className='ml-auto'>
-				{alwaysOptions}
-				{user ? authenticatedOptions : unauthenticatedOptions}
-			</Nav>
-		</Navbar.Collapse>
 	</Navbar>
 )
 

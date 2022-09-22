@@ -1,0 +1,9 @@
+.signInForm, h3, h4 {
+  text-align: center;
+  background-color: white;
+}
+
+.signIn {
+  background-color: white;
+  height: 83vh;
+}

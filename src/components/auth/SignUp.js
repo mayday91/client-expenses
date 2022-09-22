@@ -1,7 +1,7 @@
 // import React, { Component } from 'react'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-
+import './Auth.css'
 import { signUp, signIn } from '../../api/auth'
 
 import Form from 'react-bootstrap/Form'
@@ -46,10 +46,10 @@ const SignUp = (props) => {
 
 
     return (
-        <div className='row'>
-            <div className='col-sm-10 col-md-8 mx-auto mt-5'>
+        <div className='signIn'>
+            <div className=''>
                 <h3>Sign Up</h3>
-                <Form onSubmit={onSignUp}>
+                <Form className='signInForm' onSubmit={onSignUp}>
                     <Form.Group controlId='username'>
                         <Form.Label>Username</Form.Label>
                         <Form.Control

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { Card, Button } from 'react-bootstrap'
+import { Card } from 'react-bootstrap'
+import Button from '@mui/material/Button'
 import EditNoteModal from './EditNote'
 import { deleteNote } from '../../api/notes'
 
@@ -25,20 +26,20 @@ const ShowNote = (props) => {
                 </Card.Body>
                 <Card.Footer>
                     {
-                        user && user.email === note.userName
+                        user && user.username === note.userName
                         ?
                         <>
                             <Button 
                                 variant="warning"
                                 onClick={() => setEditModalShow(true)}
                             >
-                                Edit Note
+                                Edit
                             </Button>
                             <Button 
                                 onClick={() => destroyNote()} 
                                 variant="danger"
                             >
-                                Delete Note
+                                Delete
                             </Button>
                         </>
                         :

@@ -37,13 +37,7 @@ const NewNoteModal = (props) => {
     // changes to the updated boolean cause ShowReview's useEffect to run again
     .then(() => triggerRefresh())
     // if error tell user
-      .catch(() => 
-        msgAlert({
-          heading: 'Oh No!',
-          message: 'Something went wrong. Please try again',
-          variant: 'danger'
-        })
-      )
+      .catch(err => console.log(err))
   }
 
   return (

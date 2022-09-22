@@ -1,6 +1,6 @@
 .index {
   justify-content: center;
-  text-align: center;
+  /* text-align: center; */
 }
 
 a {
@@ -12,6 +12,11 @@ a {
 .yourExpenses {
   display: grid;
   width: 100vw;
-  height: 100vh;
-  text-align: center;
+  height: fit-content;
+  background-color: white;
+  place-content: center;
+  justify-content: center;
+  
+  /* height: 100vh; */
+  /* text-align: center; */
 }

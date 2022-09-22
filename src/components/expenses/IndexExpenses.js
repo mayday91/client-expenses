@@ -16,27 +16,41 @@ const cardContainerStyle = {
 const incomeCard = {
   // flex: 0.6,
   textAlign: "center",
-  backgroundColor: "green",
-  color:'black',
+  backgroundColor: "#61c0bf",
+  color:'#2c786c',
   width: '300px', 
   margin: '10px',
-  border: '5px solid lightGreen',
+  border: '5px solid #bbded6',
   borderRadius: '20px',
+  boxShadow: '1px 2px 9px #B4AAB9',
+  justifyContent: 'center'
 }
 const expenseCard = {
   // flex: 0.6,
   textAlign: "center",
-  backgroundColor: "red",
-  color:'black',
+  backgroundColor: "#ffb6b9",
+  color:'#c54c82',
   width: '300px', 
   margin: '10px',
-  border: '5px solid lightGreen',
+  border: '5px solid #fae3d9',
   borderRadius: '20px',
+  height: 'fit-content',
+  boxShadow: '1px 2px 9px #F4AAB9',
+  justifyContent: 'center'
 }
 
-const linkStyle = {
-  color: "white",
+const incomeLinkStyle = {
+  color: "#2c786c",
   textDecoration: "none"
+}
+
+const expenseLinkStyle = {
+  color: "darkgrey",
+  textDecoration: "none"
+}
+
+const amountStyle = {
+  textAlign: 'right',
 }
 
 const IndexExpenses = (props) => {
@@ -44,13 +58,13 @@ const IndexExpenses = (props) => {
   const [user, setUser] = useState(null)
   const [error] = useState(false)
   
-
   console.log(props)
-useEffect(() => {
-  getAllExpenses()
-  .then(res => setExpenses(res.data.expenses))
-  .catch(err => console.log(err))
-}, [])
+
+  useEffect(() => {
+    getAllExpenses()
+    .then(res => setExpenses(res.data.expenses))
+    .catch(err => console.log(err))
+  }, [])
 
 
 
@@ -73,55 +87,46 @@ useEffect(() => {
   // }
   // const className = expense.type === 'income' ? expenseCard : incomeCard
 
-//   const expenseCards = expenses.map(expense => (
-//       <Card style={className} key={ expense._id }>
-//         {/* <Card.Header></Card.Header> */}
-
-//         <Card.Body>
-//         {expense.title}
-//         <br></br>
-//           ${expense.amount}
-//           <Card.Text>
-//             <Link style={linkStyle} to={`/expenses/${expense._id}`}>View</Link><br></br>
-//           </Card.Text>
-//         </Card.Body>
-//       </Card>
-//     ))
-//   return (
-//     <div className='yourExpenses'>
-        
-//       <div>
-//         <br></br>
-//         { expenseCards }
-//       </div>
-//     </div>
-//     )
-// }
-
-
-return (
-  expenses.map(expense => (
-    <Card style={expenseCard} key={ expense._id }>
-      <Card.Body>
-      {expense.title}
-      <br></br>
-        ${expense.amount}
-        <Card.Text>
-          <Link style={linkStyle} to={`/expenses/${expense._id}`}>View</Link><br></br>
-        </Card.Text>
-      </Card.Body>
-    </Card>
-  ))
-  /* <div className='yourExpenses'>
-    
-  <div>
-    <br></br>
-    { expenseCards }
-  </div>
-</div> */
-)
+  const expenseCards = expenses.map(expense => (
+      <Card style={expense.type === 'income' ? incomeCard : expenseCard} key={ expense._id }>
+        <Card.Body>
+        <p><Link style={incomeLinkStyle} to={`/expenses/${expense._id}`}>{expense.title}</Link> 
+        <br></br>${expense.amount}
+        <br></br>{expense.catergory}
+        </p>
+        </Card.Body>
+      </Card>
+    ))
+  return (
+    <div className='yourExpenses'>
+          { expenseCards }
+    </div>
+    )
 }
 
+// if (user.username === expenses.userName) {
+    // return (
+      // expenses.map(expense => (
+      //   <Card style={expenseCard} key={ expense._id }>
+      //     <Card.Body>
+      //     <Link style={linkStyle} to={`/expenses/${expense._id}`}>{expense.title}</Link>
+      //       <Card.Text style={amountStyle}>
+      //       ${expense.amount}
+              
+      //       </Card.Text>
+      //     </Card.Body>
+      //   </Card>
+      // ))
+      // <div className='yourExpenses'>
+        
+      {/* <div>
+        <br></br>
+        { expenseCards }
+      </div>
+    </div> 
+    )
+    } */}
 
+// }
 
 export default IndexExpenses

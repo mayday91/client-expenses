@@ -4,7 +4,13 @@
   width: 100vw;
   /* height: 100vh; */
   /* margin: 10px; */
-  padding: 10px;
+  padding-top: 10px;
+  -webkit-font-smoothing: antialiased;
+  font-family: Helvetica;
+  font-weight: bold;
+  font-size: px;
+  background-color: white;
+  height: 100vh;
 }
 
 /* .pie-chart-title {
