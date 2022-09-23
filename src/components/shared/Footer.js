@@ -48,18 +48,22 @@ const loggedIn = (
 )
 
 const notLoggedIn = (
+  <div>
   <Link to='/about' className='aboutIcon' >
   <Fab color="primary" aria-label="list">
       <ListIcon />
   </Fab>
   </Link>
+  </div>
 )
 
 
 const Footer = ({ user }) => (
-	<Navbar className= ''  >
-    { user ? loggedIn : notLoggedIn }
-	</Navbar>
+  <>
+    <Navbar>
+      { user ? loggedIn : notLoggedIn }
+    </Navbar>
+  </>
 )
 
 export default Footer

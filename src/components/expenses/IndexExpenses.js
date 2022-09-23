@@ -76,7 +76,7 @@ const IndexExpenses = (props) => {
   if (!expenses) {
     return <LoadingScreen />
   } else if (expenses.length === 0) {
-    return <p>No expenses yet.</p>
+    return <p>No expenses tracked yet. Add some with the plus sign!</p>
   }
 
   
@@ -88,7 +88,7 @@ const IndexExpenses = (props) => {
   // const className = expense.type === 'income' ? expenseCard : incomeCard
 
   const expenseCards = expenses.map(expense => (
-      <Card style={expense.type === 'income' ? incomeCard : expenseCard} key={ expense._id }>
+      <Card style={expense.type === 'income' ? incomeCard : expenseCard} key={ expense.id }>
         <Card.Body>
         <p><Link style={incomeLinkStyle} to={`/expenses/${expense._id}`}>{expense.title}</Link> 
         <br></br>${expense.amount}

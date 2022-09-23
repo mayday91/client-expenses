@@ -32,7 +32,7 @@ const EditNoteModal = (props) => {
         // e equals the event
         e.preventDefault()
 
-        updateNote(user, expense.id, note)
+        updateNote(user, expense._id, note)
             // if we're successful in the modal, we want the modal to close
             .then(() => handleClose())
             // send a success message to the user

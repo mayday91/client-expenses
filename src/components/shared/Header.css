@@ -4,16 +4,13 @@
 
 .username {
   color: lightcoral;
-  position: fixed;
   right: 2px;
 }
 
 .headerNavBar {
-  /* display: flex; */
+  display: grid;
   background-color: #61c0bf;
-  border: 1px solid #eeddd2;
+  /* border: 1px solid #eeddd2; */
   color: #c9356c;
-  position: inherit;
-  top: 0px;
-  /* box-shadow: 1px 2px 9px #150e10; */
+  box-shadow: 1px 2px 20px #61c0bf;
 }

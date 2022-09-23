@@ -5,7 +5,7 @@ import EditNoteModal from './EditNote'
 import { deleteNote } from '../../api/notes'
 
 const ShowNote = (props) => {
-    const { note, expense, user, msgAlert, triggerRefresh } = props
+    const { note, expense, user, triggerRefresh } = props
 
     const [editModalShow, setEditModalShow] = useState(false)
 
@@ -19,7 +19,7 @@ const ShowNote = (props) => {
     return (
         <>
             <Card className="m-2">
-                <Card.Header>{user.username}</Card.Header>
+                <Card.Header>{note.userName}</Card.Header>
                 <Card.Body>
                     <small>{note.body}</small><br/>
 
@@ -53,7 +53,6 @@ const ShowNote = (props) => {
                 note={note}
                 show={editModalShow}
                 handleClose={() => setEditModalShow(false)}
-                msgAlert={msgAlert}
                 triggerRefresh={triggerRefresh}
             />
         </>

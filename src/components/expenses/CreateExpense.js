@@ -53,7 +53,7 @@ const CreateExpense = (props) => {
     // if we're successful, navigate to show page for new expense
     // send success message to user
       .then(navigate(`/expenses`))
-      .then(() => triggerRefresh())
+      .then(() => triggerRefresh)
     // if error tell user
       .catch(err => console.log(err))
   }

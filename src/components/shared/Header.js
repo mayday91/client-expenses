@@ -48,6 +48,7 @@ const linkStyle = {
 }
 
 const Header = ({ user }) => (
+	<>
 	<Navbar className='headerNavBar navBar navbar navbar-fixed-top'>
 		<Navbar.Brand >
       <Link to='/' style={linkStyle}>
@@ -58,6 +59,7 @@ const Header = ({ user }) => (
 				)}
     </Navbar.Brand>
 	</Navbar>
+	</>
 )
 
 export default Header

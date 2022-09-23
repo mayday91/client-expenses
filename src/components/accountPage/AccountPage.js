@@ -59,7 +59,8 @@ const AccountManage = ({ user }) => {
 		<div className='accountOptions'>
 			<h1>Account Settings</h1>
 			<p>Username: {user.username}</p>
-			Email Address: {user.email}
+			<p>Email Address: {user.email}</p>
+			<p>Member Since: {user.date}</p>
 			<br></br>
 		
 			

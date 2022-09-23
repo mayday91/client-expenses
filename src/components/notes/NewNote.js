@@ -4,7 +4,7 @@ import NoteForm from './NoteForm'
 import { createNote } from  '../../api/notes'
 
 const NewNoteModal = (props) => {
-  const { user, expense, show, handleClose, msgAlert, triggerRefresh } = props
+  const { user, expense, show, handleClose, triggerRefresh } = props
   const [note, setNote] = useState({})
 
   const handleChange = (e) => {
@@ -24,9 +24,9 @@ const NewNoteModal = (props) => {
     })
   }
  
-  const handleRefresh = () => {
-    setNote({})
-  }
+  // const handleRefresh = () => {
+  //   setNote({})
+  // }
   const handleSubmit = (e) => {
     e.preventDefault()
 
@@ -37,20 +37,18 @@ const NewNoteModal = (props) => {
     // changes to the updated boolean cause ShowReview's useEffect to run again
     .then(() => triggerRefresh())
     // if error tell user
-      .catch(err => console.log(err))
+    .catch(err => console.log(err))
   }
 
   return (
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton />
-
-        
         <Modal.Body>
           <NoteForm 
             note={note}
             handleChange={handleChange}
             handleSubmit={handleSubmit}
-            handleRefresh={handleRefresh}
+            // handleRefresh={handleRefresh}
             heading='Leave a note!'
           />
         </Modal.Body>
