@@ -25,12 +25,12 @@ import IndexExpenses from '../expenses/IndexExpenses'
 const loggedIn = (
   <div>
   <Link to='/addExpense' className='addExpenseIcon' style={linkStyle}>
-  <Fab color="primary" aria-label="add">
+  <Fab color="" aria-label="add">
       <AddIcon />
   </Fab>
     </Link>
     <Link to='/expenses' className='expensesListIcon' >
-  <Fab color="primary" aria-label="list">
+  <Fab color="" aria-label="list">
       <ListIcon />
   </Fab>
     </Link>
@@ -40,7 +40,7 @@ const loggedIn = (
   </Fab>
     </Link> */}
     <Link to={{ pathname: '/chart' }} className='chartIcon' >
-  <Fab color="primary" aria-label="chart">
+  <Fab color="" aria-label="chart">
       <DonutSmallIcon />
   </Fab>
     </Link>
@@ -50,7 +50,7 @@ const loggedIn = (
 const notLoggedIn = (
   <div>
   <Link to='/about' className='aboutIcon' >
-  <Fab color="primary" aria-label="list">
+  <Fab color="" aria-label="list">
       <ListIcon />
   </Fab>
   </Link>

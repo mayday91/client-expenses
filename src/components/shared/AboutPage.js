@@ -5,7 +5,7 @@ import './AboutPage.css'
 
 
 const AboutPage = (
-  <div>
+  <div className='aboutPage'>
 <h2>Pecunia ™️</h2>
 <h3>Brought to you by ©Mayday Media</h3>
   </div>
