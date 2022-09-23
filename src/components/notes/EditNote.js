@@ -37,7 +37,7 @@ const EditNoteModal = (props) => {
             .then(() => handleClose())
             // send a success message to the user
             
-            .then(() => triggerRefresh())
+            .then(() => triggerRefresh)
             // if there is an error, tell the user about it
             .catch(err => console.log(err))
     }

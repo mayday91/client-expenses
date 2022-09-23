@@ -88,7 +88,7 @@ const IndexExpenses = (props) => {
   // const className = expense.type === 'income' ? expenseCard : incomeCard
 
   const expenseCards = expenses.map(expense => (
-      <Card style={expense.type === 'income' ? incomeCard : expenseCard} key={ expense.id }>
+      <Card style={expense.type === 'income' ? incomeCard : expenseCard} key={expense._id}>
         <Card.Body>
         <p><Link style={incomeLinkStyle} to={`/expenses/${expense._id}`}>{expense.title}</Link> 
         <br></br>${expense.amount}

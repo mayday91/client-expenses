@@ -1,6 +1,6 @@
 .noteCards {
   text-align: center;
-  background-color: lightcoral;
+  /* background-color: bisque; */
   font-size: 30px;
   font-family: Times;
   width: fit-content;
@@ -9,7 +9,7 @@
 
 .buttonGroup {
   /* justify-content: center; */
-  border: 2px solid black;
+  border: 2px solid darkgrey;
 }
 
 .showExpense {

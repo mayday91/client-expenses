@@ -48,7 +48,7 @@ const App = () => {
 	}
 
 		return (
-			<>
+			<Fragment>
 				<Header user={user} />
 				<Routes>
 					<Route 
@@ -150,7 +150,7 @@ const App = () => {
 						deleteAlert={deleteAlert}
 					/>
 				))}
-			</>
+			</Fragment>
 		)
 }
 

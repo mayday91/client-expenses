@@ -37,7 +37,7 @@
 }
 
 .addExpenseIcon {
-  color: lightcoral;
+  background-color: lightcoral;
   text-align: center;
   position: fixed;
   left: 45vw;

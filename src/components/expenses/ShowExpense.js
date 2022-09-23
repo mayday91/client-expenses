@@ -24,20 +24,22 @@ const cardContainerLayout = {
 
 const expenseClass = {
     textAlign: "center",
-    backgroundColor: "lightCoral",
+    backgroundColor: "bisque",
     fontSize: "30px",
     fontFamily: "Times",
     width: "fit-content",
-    color: ""
+    color: "darkGrey",
+    borderRadius: '20px'
 }
-const incomeClass = {
-    textAlign: "center",
-    backgroundColor: "green",
-    fontSize: "30px",
-    fontFamily: "Times",
-    width: "fit-content",
-    color: "skyblue"
-}
+
+// const incomeClass = {
+//     textAlign: "center",
+//     backgroundColor: "green",
+//     fontSize: "30px",
+//     fontFamily: "Times",
+//     width: "fit-content",
+//     color: "skyblue"
+// }
 
 
 const ShowExpense = (props) => {

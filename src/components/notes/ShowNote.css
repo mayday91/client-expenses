@@ -1,0 +1,9 @@
+.noteCard {
+  background-color: bisque;
+  border-radius: 20px;
+}
+
+.deleteButton {
+  border: 2px solid darkgrey;
+  box-shadow: 10px 20px black;
+}
