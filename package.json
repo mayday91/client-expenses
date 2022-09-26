@@ -1,6 +1,7 @@
 {
   "name": "expenses",
-  "homepage": "https://main--pecunia.netlify.app/accounts/sign-in",
+  "homepage": "https://main--pecunia.netlify.app/
+  ",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
