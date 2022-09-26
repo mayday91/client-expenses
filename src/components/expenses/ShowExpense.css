@@ -10,6 +10,8 @@
 .buttonGroup {
   /* justify-content: center; */
   border: 2px solid darkgrey;
+  border: 2px solid darkgrey;
+  box-shadow: 1px 2px 10px 5px darkgrey;
 }
 
 .showExpense {
@@ -17,4 +19,5 @@
   background-color: white;
   padding: 10px;
   margin-bottom: 10px;
+
 }

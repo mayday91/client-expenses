@@ -27,7 +27,7 @@ const ShowNote = (props) => {
                 </Card.Body>
                 <Card.Footer>
                     {
-                        user && user.email === note.userName
+                        user && user.username === note.userName
                         ?
                         <>
                             {/* <Button 

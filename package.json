@@ -1,6 +1,6 @@
 {
   "name": "expenses",
-  "homepage": "https://expense.up.railway.app/",
+  "homepage": "https://main--pecunia.netlify.app/accounts/sign-in",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

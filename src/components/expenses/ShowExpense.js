@@ -29,7 +29,9 @@ const expenseClass = {
     fontFamily: "Times",
     width: "fit-content",
     color: "darkGrey",
-    borderRadius: '20px'
+    borderRadius: '20px',
+    border: '2px solid darkgrey',
+    boxShadow: '1px 2px 10px 5px darkgrey',
 }
 
 // const incomeClass = {
