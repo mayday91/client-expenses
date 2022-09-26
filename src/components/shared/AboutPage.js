@@ -4,10 +4,13 @@ import React from 'react'
 import './AboutPage.css'
 
 
-const AboutPage = (
+const AboutPage = () => (
   <div className='aboutPage'>
-<h2>Pecunia ™️</h2>
-<h3>Brought to you by ©Mayday Media</h3>
+    <br></br>
+    <h2>Pecunia ™️</h2>
+    <br></br>
+    <h3>Brought to you by <br></br>
+      © Mayday Media 2022</h3>
   </div>
 )
 

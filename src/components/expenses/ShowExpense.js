@@ -151,7 +151,7 @@ const ShowExpense = (props) => {
                 </Card>
             </Container>
             <Container style={cardContainerLayout}>
-                <div class='noteCards'>{noteCards}</div>
+                <div className='noteCards'>{noteCards}</div>
             </Container>
             <EditExpenseModal 
                 user={user}

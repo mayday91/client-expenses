@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { Modal } from 'react-bootstrap'
 import ExpenseForm from './ExpenseForm'
-import { updateReviewSuccess, updateReviewFailure } from  '../shared/AutoDismissAlert/messages'
+// import { updateReviewSuccess, updateReviewFailure } from  '../shared/AutoDismissAlert/messages'
 
 const EditExpenseModal = (props) => {
-  const { user, show, handleClose, updateExpense, msgAlert, triggerRefresh } = props
+  const { user, show, handleClose, updateExpense, triggerRefresh } = props
   const [expense, setExpense] = useState(props.expense)
 
   const handleChange = (e) => {

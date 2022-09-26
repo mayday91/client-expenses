@@ -6,12 +6,12 @@ import './IndexExpenses.css'
 import { Card } from 'react-bootstrap'
 
 //style for our card container
-const cardContainerStyle = {
-  display: 'grid',
-  // flexFlow: 'row wrap',
-  justifyContent: 'center',
-  padding: '10px',
-}
+// const cardContainerStyle = {
+//   display: 'grid',
+//   // flexFlow: 'row wrap',
+//   justifyContent: 'center',
+//   padding: '10px',
+// }
 
 const incomeCard = {
   // flex: 0.6,
@@ -44,14 +44,14 @@ const incomeLinkStyle = {
   textDecoration: "none"
 }
 
-const expenseLinkStyle = {
-  color: "darkgrey",
-  textDecoration: "none"
-}
+// const expenseLinkStyle = {
+//   color: "darkgrey",
+//   textDecoration: "none"
+// }
 
-const amountStyle = {
-  textAlign: 'right',
-}
+// const amountStyle = {
+//   textAlign: 'right',
+// }
 
 const IndexExpenses = (props) => {
   const [expenses, setExpenses] = useState(null)

@@ -1,19 +1,19 @@
 import React from 'react'
-import Nav from 'react-bootstrap/Nav'
+// import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import { Link } from 'react-router-dom'
 import './Footer.css'
-import Box from '@mui/material/Box';
+// import Box from '@mui/material/Box';
 import Fab from '@mui/material/Fab';
 import AddIcon from '@mui/icons-material/Add';
-import EditIcon from '@mui/icons-material/Edit';
-import HomeIcon from '@mui/icons-material/Home';
+// import EditIcon from '@mui/icons-material/Edit';
+// import HomeIcon from '@mui/icons-material/Home';
 import ListIcon from '@mui/icons-material/List';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import NavigationIcon from '@mui/icons-material/Navigation';
-import SettingsIcon from '@mui/icons-material/Settings';
+// import FavoriteIcon from '@mui/icons-material/Favorite';
+// import NavigationIcon from '@mui/icons-material/Navigation';
+// import SettingsIcon from '@mui/icons-material/Settings';
 import DonutSmallIcon from '@mui/icons-material/DonutSmall';
-import IndexExpenses from '../expenses/IndexExpenses'
+// import IndexExpenses from '../expenses/IndexExpenses'
 
 
 
