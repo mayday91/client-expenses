@@ -55,7 +55,7 @@ const incomeLinkStyle = {
 
 const IndexExpenses = (props) => {
   const [expenses, setExpenses] = useState(null)
-  const [user, setUser] = useState(null)
+  // const [user, setUser] = useState(null)
   const [error] = useState(false)
   
   console.log(props)

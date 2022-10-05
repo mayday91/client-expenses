@@ -37,7 +37,7 @@ const CreateExpense = (props) => {
       
       const updatedExpense = {
         [updatedName]: updatedValue,
-        [updatedTitle]: updatedValue
+        // [updatedTitle]: updatedValue
       }
       return {
         ...prevExpense,
