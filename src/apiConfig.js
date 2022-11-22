@@ -1,7 +1,7 @@
 let apiUrl
 const apiUrls = {
     // YOU MUST CHANGE PRODUCTION URL WHEN DEPLOYING
-	production: 'https://polar-brook-07094.herokuapp.com/https://expenses.fly.dev',
+	production: 'https://mayday-proxy.herokuapp.com/https://expenses.fly.dev',
 	development: 'http://localhost:3001',
 }
 
