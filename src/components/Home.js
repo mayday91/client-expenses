@@ -7,14 +7,14 @@ import NewUser from '../components/accountPage/NewUserPage'
 
 
 const Home = (props) => {
-	const { user } = props
+	const { user, Expenses } = props
 	console.log('props in home')
 
 	console.log('user?.username',user?.username)
 	
 	return (
 		<>
-		{ user?.username ? <MyPieChart /> : <NewUser />}
+		{ user?.username ? <MyPieChart Expenses={Expenses} /> : <NewUser />}
 		</>	
 	)
 }
